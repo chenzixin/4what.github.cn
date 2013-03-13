@@ -17,19 +17,9 @@
 <div id="content">
 	<h2 class="heading"><span>Search results</span></h2>
 	<div class="layer" id="search-results">
-
+		<!-- Google Custom Search -->
+		<!-- v1 -->
 <!--
-		<div id="cse-search-results"></div>
-		<script type="text/javascript">
-			var googleSearchIframeName = "cse-search-results";
-			var googleSearchFormName = "cse-search-box";
-			var googleSearchFrameWidth = 600;
-			var googleSearchDomain = "www.google.com";
-			var googleSearchPath = "/cse";
-		</script>
-		<script type="text/javascript" src="http://www.google.com/afsonline/show_afs_search.js"></script>
--->
-
 		<div id="cse" style="width: 100%;">Loading...</div>
 		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 		<script type="text/javascript">
@@ -61,7 +51,22 @@
 				}, true);
 			} catch (e) {}
 		</script>
+-->
 
+		<!-- v2 -->
+		<script type="text/javascript">
+			(function() {
+				var cx = '003970347717441632342:w1yswrep7te';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
+					'//www.google.com/cse/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:searchresults-only></gcse:searchresults-only>
 	</div>
 	<!-- end of "#search-results" -->
 </div>

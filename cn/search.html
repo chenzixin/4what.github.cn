@@ -20,17 +20,9 @@
 <div id="search">
 	<h3 class="subheading"><span>Search</span></h3>
 
+	<!-- Google Custom Search -->
+	<!-- v1 -->
 <!--
-	<form action="search-results.html" id="cse-search-box">
-		<div>
-			<input type="hidden" name="cx" value="003970347717441632342:w1yswrep7te" />
-			<input type="hidden" name="ie" value="UTF-8" /> <input type="text" name="q" size="31" />
-			<input type="submit" name="sa" value="搜索" />
-		</div>
-	</form>
-	<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=zh-Hans"></script>
--->
-
 	<div id="cse-search-form" style="width: 100%;"></div>
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	<script type="text/javascript">
@@ -45,6 +37,22 @@
 			}, true);
 		} catch (e) {}
 	</script>
+-->
+
+	<!-- v2 -->
+	<script type="text/javascript">
+		(function() {
+			var cx = '003970347717441632342:w1yswrep7te';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = (document.location.protocol == 'https' ? 'https:' : 'http:') +
+				'//www.google.com/cse/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+		})();
+	</script>
+	<gcse:searchbox-only newWindow="true" resultsUrl="search-results.html"></gcse:searchbox-only>
 </div>
 <!-- end of "#search" -->
 
