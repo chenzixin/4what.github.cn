@@ -1,0 +1,2 @@
+﻿// include
+$what.include("syntaxhighlighter");

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>4what - Search results</title>
+<meta name="author" content="4what" />
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+</head>
+
+<body id="body-search-results">
+<div id="main">
+
+<div id="container">
+
+<iframe src="header.html" frameborder="0" scrolling="no" id="iframe-header"></iframe>
+
+<div id="content">
+	<h2 class="heading"><span>Search results</span></h2>
+	<div class="layer" id="search-results">
+
+<!--
+		<div id="cse-search-results"></div>
+		<script type="text/javascript">
+			var googleSearchIframeName = "cse-search-results";
+			var googleSearchFormName = "cse-search-box";
+			var googleSearchFrameWidth = 600;
+			var googleSearchDomain = "www.google.com";
+			var googleSearchPath = "/cse";
+		</script>
+		<script type="text/javascript" src="http://www.google.com/afsonline/show_afs_search.js"></script>
+-->
+
+		<div id="cse" style="width: 100%;">Loading...</div>
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			try {
+				google.load("search", "1", {language: "zh-CN", style: google.loader.themes.V2_DEFAULT});
+				google.setOnLoadCallback(function() {
+					var customSearchControl = new google.search.CustomSearchControl("003970347717441632342:w1yswrep7te", {});
+					customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+					customSearchControl.draw("cse");
+
+					function parseParamsFromUrl() {
+						var params = {};
+						var parts = window.location.search.substr(1).split('\x26');
+						for (var i = 0; i < parts.length; i++) {
+							var keyValuePair = parts[i].split('=');
+							var key = decodeURIComponent(keyValuePair[0]);
+							params[key] = keyValuePair[1] ?
+								decodeURIComponent(keyValuePair[1].replace(/\+/g, ' ')) :
+								keyValuePair[1];
+						}
+						return params;
+					}
+
+					var urlParams = parseParamsFromUrl();
+					var queryParamName = "q";
+					if (urlParams[queryParamName]) {
+						customSearchControl.execute(urlParams[queryParamName]);
+					}
+				}, true);
+			} catch (e) {}
+		</script>
+
+	</div>
+	<!-- end of "#search-results" -->
+</div>
+<!-- end of "#content" -->
+
+<iframe src="footer.html" frameborder="0" scrolling="no" id="iframe-footer"></iframe>
+</div>
+<!-- end of "#container" -->
+</div>
+<!-- end of "#main" -->
+</body>
+</html>
